@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCalculadora_JOVT.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Frame BackgroundColor="Gray"  Padding="20" CornerRadius="0">
+                <Label Text="Calcular IMC" HorizontalTextAlignment="Center" TextColor="White" FontSize="34"/>
+            </Frame>
+            <Entry Placeholder="Altura" x:Name="Altura"/>
+            <Entry Placeholder="Peso" x:Name="Peso"/>
+            <Entry Placeholder="IMC" x:Name="IMC"/>
+            <Button Text="Calcular" Clicked="Button_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
