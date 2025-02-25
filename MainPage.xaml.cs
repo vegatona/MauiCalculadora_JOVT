@@ -17,6 +17,7 @@
 
             IMC.Text = Resultado.ToString();
         }
+        //colocar mensajes de sobre peso.
     }
 
 }
