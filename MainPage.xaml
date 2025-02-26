@@ -3,16 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiCalculadora_JOVT.MainPage">
 
-    <ScrollView>
-        <VerticalStackLayout>
-            <Frame BackgroundColor="Gray"  Padding="20" CornerRadius="0">
-                <Label Text="Calcular IMC" HorizontalTextAlignment="Center" TextColor="White" FontSize="34"/>
-            </Frame>
-            <Entry Placeholder="Altura" x:Name="Altura"/>
-            <Entry Placeholder="Peso" x:Name="Peso"/>
-            <Entry Placeholder="IMC" x:Name="IMC"/>
-            <Button Text="Calcular" Clicked="Button_Clicked"/>
-        </VerticalStackLayout>
-    </ScrollView>
+    <StackLayout>
+        <Label Text="CalculadoraIMC" HorizontalTextAlignment="Center" TextColor="#522DD4" FontSize="36"/>
+
+        <Entry Placeholder="Peso" x:Name="Peso"/>
+        <Entry Placeholder="Altura" x:Name="Altura"/>
+
+        <Entry Placeholder="IMC" x:Name="IMC" IsEnabled="False"/>
+        <Button Text="Calcular" Clicked="Button_Clicked"/>
+
+
+
+        <Label Text="Imagenes de peso"/>
+        <Image Source="https://i.ibb.co/k6sw5SJ/3.png" x:Name="Gordo" IsVisible="false" />
+        <Image Source="https://i.ibb.co/ThQB3SN/2.png" x:Name="Normal" IsVisible="false" />
+        <Image Source="https://i.ibb.co/WBcxxMF/1.png" x:Name="Flaco" IsVisible="false" />
+    </StackLayout>
 
 </ContentPage>

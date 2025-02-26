@@ -7,15 +7,52 @@
             InitializeComponent();
         }
 
-        public void Button_Clicked(object sender, EventArgs e)
+        private void Button_Clicked(object sender, EventArgs e)
         {
-            var altura = double.Parse(Altura.Text);
-            var peso = double.Parse(Peso.Text);
-            var imc = peso / (altura * altura);
+            if (!string.IsNullOrEmpty(Altura.Text) && !string.IsNullOrEmpty(Peso.Text))
+            {
+                var peso = float.Parse(Peso.Text);
+                var altura = float.Parse(Altura.Text);
 
-            var Resultado = imc;
+                var imc = (peso / (altura * altura)*1000);
 
-            IMC.Text = Resultado.ToString();
+
+                IMC.Text = imc.ToString();
+
+                //mensaje
+                string resultado = "";
+                if (imc < 18.5)
+                {
+                    resultado = "Tiene bajo peso";
+                    Flaco.IsVisible = true;
+                    Normal.IsVisible = false;
+                    Gordo.IsVisible = false;
+                }
+                else if (imc >= 18.5 && imc <= 24.9)
+                {
+                    resultado = "Tu peso es normal";
+                    Flaco.IsVisible = false;
+                    Normal.IsVisible = true;
+                    Gordo.IsVisible = false;
+                }
+                else if (imc >= 25 && imc <= 29.9)
+                {
+                    resultado = "Tiene sobre peso";
+                    Flaco.IsVisible = false;
+                    Normal.IsVisible = false;
+                    Gordo.IsVisible = true;
+                }
+                else
+                {
+                    resultado = "Por favor cuidate";
+                }
+                DisplayAlert("Resultado: ", resultado, "Quitar");
+            }
+            else
+            {
+                DisplayAlert("Datos erroneos", "Por favol, llena todo la informacion", "Quitar");
+            }
         }
+
     }
 }
