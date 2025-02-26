@@ -14,7 +14,7 @@
                 var peso = float.Parse(Peso.Text);
                 var altura = float.Parse(Altura.Text);
 
-                var imc = (peso / (altura * altura)*1000);
+                var imc = peso / (altura * altura);
 
 
                 IMC.Text = imc.ToString();
