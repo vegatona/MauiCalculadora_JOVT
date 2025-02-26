@@ -37,14 +37,14 @@
                 }
                 else if (imc >= 25 && imc <= 29.9)
                 {
-                    resultado = "Tiene sobre peso";
+                    resultado = "Tiene sobrepeso";
                     Flaco.IsVisible = false;
                     Normal.IsVisible = false;
                     Gordo.IsVisible = true;
                 }
                 else
                 {
-                    resultado = "Por favor cuidate";
+                    resultado = "Cuidate, porfavor";
                 }
                 DisplayAlert("Resultado: ", resultado, "Quitar");
             }
